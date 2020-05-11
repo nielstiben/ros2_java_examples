@@ -28,7 +28,7 @@ import java.lang.reflect.Type;
 public class FibonacciActionClient {
     private static final Type T = Fibonacci_Feedback.class;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
         // Initialize RCL
         RCLJava.rclJavaInit();
 
@@ -41,6 +41,6 @@ public class FibonacciActionClient {
                 (Fibonacci_Result msg) -> System.out.println("Result: [" + msg.getSequence() + "]"),
                 (Fibonacci_Feedback msg) -> System.out.println("Feedback: [" + msg.toString() + "]")
         );
-
+        System.out.println("reached! :)");
     }
 }
